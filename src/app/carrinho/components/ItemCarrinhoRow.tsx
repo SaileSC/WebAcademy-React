@@ -1,12 +1,12 @@
 import { ItemCarrinho } from "@/app/types/ItemCarrinho";
-import BotaoCancelar from "./BtnCancelar";
 
 interface ItemCarrinhoProp{
     item:ItemCarrinho
+    removeProduto:Function
 }
 
 const ItemCarrinhoRow = (
-    {item}:ItemCarrinhoProp
+    {item, removeProduto}:ItemCarrinhoProp
     ) => {
     const valorTotalProduto = (
         precoUnitario: number,
@@ -21,7 +21,9 @@ const ItemCarrinhoRow = (
 
             <td>R$ {valorTotalProduto(item.preco, item.quantidade).toFixed(2)}</td>
             <td>
-                <BotaoCancelar/>
+                <button className="btn btn-danger btn-sm" onClick={() => removeProduto(item.id)}>
+                    Remover
+                </button>
             </td>
         </tr>
     );

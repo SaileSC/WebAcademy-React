@@ -1,9 +1,13 @@
 "use client"
-import React from "react";
+import React, { MouseEventHandler } from "react";
 
-const BtnAdicionaProduto = () => {
+interface BtnProp{
+    onclick: MouseEventHandler<HTMLButtonElement>
+}
+
+const BtnAdicionaProduto = ({onclick} : BtnProp) => {
     return(
-        <button className="btn btn-dark d-block w-100" type="button">
+        <button className="btn btn-dark d-block w-100" type="button" onClick={onclick}>
             Adicionar no carrinho
         </button>
     );

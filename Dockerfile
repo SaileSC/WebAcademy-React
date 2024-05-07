@@ -6,6 +6,6 @@ COPY . .
 
 RUN npm install
 
-EXPOSE 4477
+EXPOSE 3000
 
 CMD npm run dev
