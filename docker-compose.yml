@@ -1,0 +1,8 @@
+services:
+  frontend_react:
+    build:
+      context: .
+    volumes:
+      - .:/app
+    ports:
+      - 4477:4477
