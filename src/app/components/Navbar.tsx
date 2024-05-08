@@ -1,4 +1,10 @@
+"use client"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 const Navbar = () => {
+    const pathname = usePathname()
+    if(pathname == "/login" || pathname == "/cadastro") return;
     return (
     <nav className="navbar navbar-expand-md bg-light border-bottom border-body sticky-top">
       <div className="container-fluid">
@@ -19,14 +25,10 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <ul className="navbar-nav me-auto mb-2 mb-md-0">
             <li className="nav-item">
-              <a className="nav-link" href="/">
-                Início
-              </a>
+            <Link href={'/'} className="nav-link">Inicio</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/carrinho">
-                Carrinho
-              </a>
+              <Link href={'/carrinho'} className="nav-link">Carrinho</Link>
             </li>
           </ul>
 

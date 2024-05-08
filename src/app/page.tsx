@@ -1,16 +1,35 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 
 import { ResumoCarrinho } from "./components/ResumoCarrinho";
 import ListagemProdutos from "./components/ListagemProdutos";
-import { mockProdutos } from "./mock/mockProdutos";
-import { ItemCarrinho } from "./types/ItemCarrinho";
 import { Produto } from "./types/Produtos";
 
 
 export default function Produtos() {
-  const listaProdutos = mockProdutos;
+  //const listaProdutos = mockProdutos;
 
+
+  const [dados, setDados] = React.useState<Produto[]>([])
+  useEffect(() => {
+    const controler = new AbortController();
+    const signal = controler.signal
+
+    const fetchData = async() => {
+      try{
+        const response =  await fetch("https://ranekapi.origamid.dev/json/api/produto", {signal})
+        const json = await response.json() as Produto[];
+        setDados(json);
+      }catch(err){
+        console.log(err)  
+      }
+    }
+    fetchData();
+
+    return () => {
+      controler.abort();
+    }
+  }, []);
 
   //const [listaItensCarrinho, setNovoProduto] = React.useState<ItemCarrinho[]> ([])
   // const addProdutoCarrinho = (produto: Produto) => {
@@ -37,8 +56,8 @@ export default function Produtos() {
   return (
     <main>
         <div className="container p-5">
-        <ResumoCarrinho quantidadeTotal={quantidadeItens} valorTotal={valorTotalCompra} />
-        <ListagemProdutos produtos={listaProdutos} setNovoProduto={addProdutoCarrinho}/>
+          <ResumoCarrinho quantidadeTotal={quantidadeItens} valorTotal={valorTotalCompra} />
+          <ListagemProdutos produtos={dados} setNovoProduto={addProdutoCarrinho}/>
         </div>
     </main>
   );

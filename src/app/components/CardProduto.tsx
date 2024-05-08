@@ -2,12 +2,10 @@ import Image
 from "next/image"
 import BotaoAdicionarProduto from "./BtnAdicionaProduto";
 import { Produto } from "../types/Produtos";
-import { ItemCarrinho } from "../types/ItemCarrinho";
 
 interface CardProdutoProps {
     produto:Produto,
     setNovoProduto: Function
-
 }
 
 
@@ -15,7 +13,7 @@ const CardProduto = ({
     produto,
     setNovoProduto
     }: CardProdutoProps ) => {
-
+    
     return (
         <div className="col">
             <div className="card shadow-sm h-100">
