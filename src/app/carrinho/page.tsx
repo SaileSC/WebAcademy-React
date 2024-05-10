@@ -7,10 +7,10 @@ import { ResumoCarrinho } from "../components/ResumoCarrinho";
 
 export default function Carrinho() {
   const listaProdutos = mockItensCarrinho;
-  const [listaCarrinho, setRemoveProduto] = React.useState<ItemCarrinho[]>(listaProdutos)
+  const [listaCarrinho, setListaCarrinho] = React.useState<ItemCarrinho[]>(listaProdutos)
 
   const removeProduto = (id:string) =>{
-    setRemoveProduto(itens => itens.filter(prod => prod.id != id))
+    setListaCarrinho(itens => itens.filter(prod => prod.id != id))
   }
 
   const getQuantidadeItensCarrinho = ():number =>{

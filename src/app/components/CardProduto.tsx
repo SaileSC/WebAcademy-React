@@ -1,7 +1,8 @@
-import Image
-from "next/image"
+"use client"
+import Image from "next/image"
 import BotaoAdicionarProduto from "./BtnAdicionaProduto";
 import { Produto } from "../types/Produtos";
+import { useRouter } from "next/navigation";
 
 interface CardProdutoProps {
     produto:Produto,
@@ -13,6 +14,13 @@ const CardProduto = ({
     produto,
     setNovoProduto
     }: CardProdutoProps ) => {
+
+    const router = useRouter();
+    
+    const verDetalheProduto = (pathdir:string) => {
+        router.push(pathdir)
+    }
+
     
     return (
         <div className="col">
@@ -29,6 +37,9 @@ const CardProduto = ({
                 <h5 className="card-title">{produto.nome}</h5>
                 <p className="card-text text-secondary">R$ {produto.preco}</p>
                     <BotaoAdicionarProduto onclick={() => setNovoProduto(produto)}/>
+                    <button className="btn btn-light d-block w-100 mt-2" type="button" onClick={() => verDetalheProduto(`/produto/${produto.nome}`)}>
+                        Ver detalhes
+                    </button>
                 </div>
             </div>
         </div>
