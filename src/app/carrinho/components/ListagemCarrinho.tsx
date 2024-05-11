@@ -1,5 +1,4 @@
 "use client"
-import { ResumoCarrinho } from "@/app/components/ResumoCarrinho";
 import React from "react";
 import ItemCarrinhoRow from "./ItemCarrinhoRow";
 import { ItemCarrinho } from "@/app/types/ItemCarrinho";

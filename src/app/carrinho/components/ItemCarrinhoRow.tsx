@@ -1,3 +1,4 @@
+import Botao from "@/app/components/Botao";
 import { ItemCarrinho } from "@/app/types/ItemCarrinho";
 
 interface ItemCarrinhoProp{
@@ -21,9 +22,12 @@ const ItemCarrinhoRow = (
 
             <td>R$ {valorTotalProduto(item.preco, item.quantidade).toFixed(2)}</td>
             <td>
-                <button className="btn btn-danger btn-sm" onClick={() => removeProduto(item.id)}>
-                    Remover
-                </button>
+                <Botao
+                text="Remover"
+                btnClass="danger"
+                sizeClass="sm"
+                onclick={() => removeProduto(item.id)}
+                />
             </td>
         </tr>
     );

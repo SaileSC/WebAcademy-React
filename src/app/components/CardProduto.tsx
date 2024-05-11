@@ -1,8 +1,9 @@
 "use client"
 import Image from "next/image"
-import BotaoAdicionarProduto from "./BtnAdicionaProduto";
 import { Produto } from "../types/Produtos";
 import { useRouter } from "next/navigation";
+import Botao from "./Botao";
+
 
 interface CardProdutoProps {
     produto:Produto,
@@ -36,10 +37,20 @@ const CardProduto = ({
                 <div className="card-body bg-light">
                 <h5 className="card-title">{produto.nome}</h5>
                 <p className="card-text text-secondary">R$ {produto.preco}</p>
-                    <BotaoAdicionarProduto onclick={() => setNovoProduto(produto)}/>
-                    <button className="btn btn-light d-block w-100 mt-2" type="button" onClick={() => verDetalheProduto(`/produto/${produto.nome}`)}>
-                        Ver detalhes
-                    </button>
+                    <Botao 
+                        text="Adicionar no carrinho"
+                        width={100}
+                        btnClass="dark"
+                        onclick={() => setNovoProduto(produto)}
+                    />
+
+                    <Botao 
+                        text="Ver detalhes"
+                        width={100}
+                        btnClass="light"
+                        margimTop={2}
+                        onclick={() => verDetalheProduto(`/produto/${produto.nome}`)}
+                    />
                 </div>
             </div>
         </div>
