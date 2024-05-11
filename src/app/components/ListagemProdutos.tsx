@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import CardProduto from "./CardProduto";
-import { ItemCarrinho } from "../types/ItemCarrinho";
 import { Produto } from "../types/Produtos";
 
 interface ListaProdutosProps {

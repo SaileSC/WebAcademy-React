@@ -1,8 +1,7 @@
 import Image
 from "next/image"
-import BotaoAdicionarProduto from "./BtnAdicionaProduto";
 import { Produto } from "../types/Produtos";
-import { ItemCarrinho } from "../types/ItemCarrinho";
+import Botao from "./Botao";
 
 interface CardProdutoProps {
     produto:Produto,
@@ -30,7 +29,12 @@ const CardProduto = ({
                 <div className="card-body bg-light">
                 <h5 className="card-title">{produto.nome}</h5>
                 <p className="card-text text-secondary">R$ {produto.preco}</p>
-                    <BotaoAdicionarProduto onclick={() => setNovoProduto(produto)}/>
+                    <Botao 
+                    text="Adicionar no carrinho"
+                    width={100}
+                    btnClass="dark"
+                    onclick={() => setNovoProduto(produto)}
+                    />
                 </div>
             </div>
         </div>

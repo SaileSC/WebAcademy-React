@@ -1,3 +1,7 @@
+"use client"
+
+import Botao from "./Botao";
+
 const Navbar = () => {
     return (
     <nav className="navbar navbar-expand-md bg-light border-bottom border-body sticky-top">
@@ -29,8 +33,10 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-
-          <button className="btn btn-dark">Sair</button>
+          <Botao
+            text="Sair"
+            btnClass="dark"
+          />                    
         </div>
       </div>
     </nav>
