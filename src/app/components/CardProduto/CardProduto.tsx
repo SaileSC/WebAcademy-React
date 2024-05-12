@@ -1,8 +1,8 @@
 "use client"
 import Image from "next/image"
-import { Produto } from "../types/Produtos";
+import { Produto } from "../../types/Produtos";
 import { useRouter } from "next/navigation";
-import Botao from "./Botao";
+import Botao from "../Botoes/Botao";
 
 
 interface CardProdutoProps {
@@ -17,6 +17,7 @@ const CardProduto = ({
     }: CardProdutoProps ) => {
 
     const router = useRouter();
+    
     const verDetalheProduto = (pathdir:string) => {
         router.push(`/produto/${pathdir}`)
     }

@@ -1,4 +1,4 @@
-import Botao from "@/app/components/Botao";
+import Botao from "@/app/components/Botoes/Botao";
 import { ItemCarrinho } from "@/app/types/ItemCarrinho";
 
 interface ItemCarrinhoProp{

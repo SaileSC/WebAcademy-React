@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import ListagemCarrinho from "./components/ListagemCarrinho";
+import ListagemCarrinho from "../components/ListagemCarrinho/ListagemCarrinho";
 import { mockItensCarrinho } from "../mock/mockItensCarrinho";
 import { ItemCarrinho } from "../types/ItemCarrinho";
-import { ResumoCarrinho } from "../components/ResumoCarrinho";
+import { ResumoCarrinho } from "../components/ResumoCarrinho/ResumoCarrinho";
 
 export default function Carrinho() {
   const listaProdutos = mockItensCarrinho;

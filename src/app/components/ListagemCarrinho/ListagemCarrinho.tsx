@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import ItemCarrinhoRow from "./ItemCarrinhoRow";
+import ItemCarrinhoRow from "../ListagemCarrinhoRow/ItemCarrinhoRow";
 import { ItemCarrinho } from "@/app/types/ItemCarrinho";
 
 interface ListaItensProp {

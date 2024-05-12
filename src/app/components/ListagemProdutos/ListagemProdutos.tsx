@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import CardProduto from "./CardProduto";
-import { Produto } from "../types/Produtos";
+import CardProduto from "../CardProduto/CardProduto";
+import { Produto } from "../../types/Produtos";
 
 interface ListaProdutosProps {
     produtos:Produto[],

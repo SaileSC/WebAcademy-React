@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect } from "react";
 
-import { ResumoCarrinho } from "./components/ResumoCarrinho";
-import ListagemProdutos from "./components/ListagemProdutos";
+import { ResumoCarrinho } from "./components/ResumoCarrinho/ResumoCarrinho";
+import ListagemProdutos from "./components/ListagemProdutos/ListagemProdutos";
 import { Produto } from "./types/Produtos";
 
 
