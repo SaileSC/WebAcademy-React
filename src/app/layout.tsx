@@ -5,6 +5,7 @@ export const metadata = {
 import BootstrapClient from "./components/BootstrapCliente";
 import "bootstrap/dist/css/bootstrap.min.css"
 import Navbar from "./components/Navbar/Navbar"
+import { ReactQueryClienteProvider } from "./components/ReactQueryClient";
 
 
 export default function RootLayout({
@@ -15,9 +16,11 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
-        <Navbar/>
-        {children}
-        <BootstrapClient/>
+        <ReactQueryClienteProvider>
+          <Navbar/>
+          {children}
+          <BootstrapClient/>
+        </ReactQueryClienteProvider>
       </body>
     </html>
   )
