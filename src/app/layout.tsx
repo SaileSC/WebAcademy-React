@@ -1,9 +1,11 @@
 export const metadata = {
   title: 'Web Academy',
 }
-import "bootstrap/dist/css/bootstrap.min.css"
-import Navbar from "./components/Navbar"
 
+import BootstrapClient from "./components/BootstrapCliente";
+import "bootstrap/dist/css/bootstrap.min.css"
+import Navbar from "./components/Navbar/Navbar"
+import { ReactQueryClienteProvider } from "./components/ReactQueryClient";
 
 
 export default function RootLayout({
@@ -14,8 +16,11 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
-        <Navbar/>
-        {children}
+        <ReactQueryClienteProvider>
+          <Navbar/>
+          {children}
+          <BootstrapClient/>
+        </ReactQueryClienteProvider>
       </body>
     </html>
   )

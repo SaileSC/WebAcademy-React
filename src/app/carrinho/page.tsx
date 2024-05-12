@@ -1,16 +1,16 @@
 "use client";
 import React from "react";
-import ListagemCarrinho from "./components/ListagemCarrinho";
+import ListagemCarrinho from "../components/ListagemCarrinho/ListagemCarrinho";
 import { mockItensCarrinho } from "../mock/mockItensCarrinho";
 import { ItemCarrinho } from "../types/ItemCarrinho";
-import { ResumoCarrinho } from "../components/ResumoCarrinho";
+import { ResumoCarrinho } from "../components/ResumoCarrinho/ResumoCarrinho";
 
 export default function Carrinho() {
   const listaProdutos = mockItensCarrinho;
-  const [listaCarrinho, setRemoveProduto] = React.useState<ItemCarrinho[]>(listaProdutos)
+  const [listaCarrinho, setListaCarrinho] = React.useState<ItemCarrinho[]>(listaProdutos)
 
   const removeProduto = (id:string) =>{
-    setRemoveProduto(itens => itens.filter(prod => prod.id != id))
+    setListaCarrinho(itens => itens.filter(prod => prod.id != id))
   }
 
   const getQuantidadeItensCarrinho = ():number =>{
