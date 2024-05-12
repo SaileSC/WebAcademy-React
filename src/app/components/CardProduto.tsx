@@ -17,21 +17,19 @@ const CardProduto = ({
     }: CardProdutoProps ) => {
 
     const router = useRouter();
-    
     const verDetalheProduto = (pathdir:string) => {
-        router.push(pathdir)
+        router.push(`/produto/${pathdir}`)
     }
 
-    
     return (
         <div className="col">
             <div className="card shadow-sm h-100">
                 <Image
-                src={produto.fotos[0].src}
-                className="card-img-top"
-                alt={produto.fotos[0].titulo}
-                width={300}
-                height={320}
+                    src={produto.fotos[0].src}
+                    className="card-img-top"
+                    alt={produto.fotos[0].titulo}
+                    width={300}
+                    height={320}
                 />
 
                 <div className="card-body bg-light">
@@ -49,7 +47,7 @@ const CardProduto = ({
                         width={100}
                         btnClass="light"
                         margimTop={2}
-                        onclick={() => verDetalheProduto(`/produto/${produto.nome}`)}
+                        onclick={() => verDetalheProduto(produto.nome)}
                     />
                 </div>
             </div>

@@ -6,8 +6,8 @@ import ListagemProdutos from "./components/ListagemProdutos";
 import { Produto } from "./types/Produtos";
 
 
-export default function Produtos() {
-  const [dados, setDados] = React.useState<Produto[]>([])
+export default function Inicio() {
+  const [dados, setDados] = React.useState<Produto[] | null >(null)
   useEffect(() => {
     const controler = new AbortController();
     const signal = controler.signal
@@ -40,7 +40,11 @@ export default function Produtos() {
     <main>
         <div className="container p-5">
           <ResumoCarrinho quantidadeTotal={quantidadeItens} valorTotal={valorTotalCompra} />
-          <ListagemProdutos produtos={dados} setNovoProduto={addProdutoCarrinho}/>
+          {
+            dados ? <ListagemProdutos produtos={dados} setNovoProduto={addProdutoCarrinho}/> 
+            : <p className="fs-4 fw-bold">Carregando...</p>
+          }
+          
         </div>
     </main>
   );

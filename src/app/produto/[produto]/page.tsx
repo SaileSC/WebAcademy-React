@@ -1,11 +1,11 @@
 "use client";
 
-import { Produto } from "@/app/types/Produtos";
+import { Produto } from "../../types/Produtos";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import React, { useEffect } from "react";
 
-export default function Produto() {
+export default function PageProduto() {
     const [item, setProduto] = React.useState<Produto | null>(null)
     const { produto } = useParams()
     useEffect(() => {
@@ -17,6 +17,7 @@ export default function Produto() {
 
         fetchData()
     })
+    
   return (
     <main>
       <div className="container p-5">
