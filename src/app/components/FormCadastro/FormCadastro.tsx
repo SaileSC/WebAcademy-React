@@ -58,7 +58,7 @@ export default function FormCadastro(){
 
                 {...register("confirmaEmail", {required:true, validate:(confEmail) => {
                     if(watch("email") != confEmail){
-                        return "Emails não coencidem";
+                        return "os Emails não coencidem";
                     }
                 }})}
                 />
