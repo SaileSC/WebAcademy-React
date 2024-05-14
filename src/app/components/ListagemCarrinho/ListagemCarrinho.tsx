@@ -6,10 +6,12 @@ import { ItemCarrinho } from "@/app/types/ItemCarrinho";
 interface ListaItensProp {
   itens:ItemCarrinho[],
   removeProduto:Function
+  aumentaQuantiade:Function
+  diminuiQuantidade:Function
 }
 
 export const ListagemCarrinho = (
-  {itens, removeProduto}:ListaItensProp
+  {itens, removeProduto, aumentaQuantiade, diminuiQuantidade}:ListaItensProp
 ) => {
     return(
       <div className="card mb-4">
@@ -30,7 +32,7 @@ export const ListagemCarrinho = (
             </thead>
             <tbody>
               {itens.map((item) => (
-                <ItemCarrinhoRow key={item.id} item={item} removeProduto={removeProduto}/>
+                <ItemCarrinhoRow key={item.id} item={item} removeProduto={removeProduto} aumentaQuantiade={aumentaQuantiade} diminuiQuantidade={diminuiQuantidade}/>
               ))}
             </tbody>
           </table>
