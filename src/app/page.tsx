@@ -25,6 +25,9 @@ export default function Inicio() {
     setValorTotal(valorAtual => valorAtual + parseFloat(produto.preco));
     setQuantidadeItens(qtdAtual => qtdAtual + 1);
   }
+  
+  //console.log(`qtdItensFavoritados : ${favoritos.length}`)
+
 
   return (
     <main>

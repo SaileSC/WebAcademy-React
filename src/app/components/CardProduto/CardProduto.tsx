@@ -41,7 +41,7 @@ const CardProduto = ({
         <div className="col">
             <div className="card shadow-sm h-100">
             <i role="button" 
-            className={`bi ${favoritado ?"bi-star-fill" : "bi-star"} fs-2 position-absolute me-2 text-warning end-0 cursor-pointer`}
+            className={`bi bi-star${favoritado?"-fill":""} fs-2 position-absolute me-2 text-warning end-0 cursor-pointer`}
             onClick={() => favoritaItem(produto)}></i>
                 <Image
                     src={produto.fotos[0].src}
