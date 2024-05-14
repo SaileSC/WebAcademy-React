@@ -31,6 +31,9 @@ const Navbar = () => {
               <li className="nav-item">
                 <Link href={'/carrinho'} className="nav-link">Carrinho</Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" href="/favoritos">Lista de Favoritos</Link>
+              </li>
             </ul>
 
             <button className="btn btn-dark">Sair</button>

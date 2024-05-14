@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import CardProduto from "../CardProduto/CardProduto";
 import { useListaProdutos } from "@/app/hooks/useListaProdutos";
+import { favoritosContext } from "@/app/page";
 
 interface ListaProdutosProps {
     setNovoProduto: Function
@@ -11,7 +12,7 @@ const ListagemProdutos = ({
     setNovoProduto
     }:ListaProdutosProps
 ) => {
-
+    
     const {produtos, isPending, isError} = useListaProdutos();
 
     if(isPending) return <h5>Carregando...</h5>

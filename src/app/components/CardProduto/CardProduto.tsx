@@ -3,6 +3,8 @@ import Image from "next/image"
 import { Produto } from "../../types/Produtos";
 import { useRouter } from "next/navigation";
 import Botao from "../Botoes/Botao";
+import { useContext, useState } from "react";
+import { favoritosContext } from "@/app/page";
 
 
 interface CardProdutoProps {
@@ -21,10 +23,26 @@ const CardProduto = ({
     const verDetalheProduto = (pathdir:string) => {
         router.push(`/produto/${pathdir}`)
     }
-
+    const contextFavoritos = useContext(favoritosContext);
+    
+    const [favoritado, setFavoritado] = useState<boolean>(contextFavoritos.favoritos.includes(produto));
+    
+    const favoritaItem = (produto: Produto) => {
+        if(contextFavoritos.favoritos.includes(produto)){
+            contextFavoritos.setFavoritos((favoritos) => favoritos.filter((item) => item.id !== produto.id));
+            setFavoritado(false);
+        }else{
+            contextFavoritos.setFavoritos(favoritos => [...favoritos, produto])
+            setFavoritado(true);
+        }
+    }
+    
     return (
         <div className="col">
             <div className="card shadow-sm h-100">
+            <i role="button" 
+            className={`bi bi-star${favoritado?"-fill":""} fs-2 position-absolute me-2 text-warning end-0 cursor-pointer`}
+            onClick={() => favoritaItem(produto)}></i>
                 <Image
                     src={produto.fotos[0].src}
                     className="card-img-top"
