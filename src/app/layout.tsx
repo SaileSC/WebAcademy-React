@@ -4,6 +4,7 @@ export const metadata = {
 
 import BootstrapClient from "./components/BootstrapCliente";
 import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap-icons/font/bootstrap-icons.css"
 import Navbar from "./components/Navbar/Navbar"
 import { ReactQueryClienteProvider } from "./components/ReactQueryClient";
 
