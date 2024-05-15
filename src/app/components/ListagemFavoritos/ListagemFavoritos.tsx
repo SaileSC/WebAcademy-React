@@ -8,7 +8,7 @@ interface IListagemFavoritosProps {
 
 export default function ListagemFavoritos({
   produtosFavoritos,
-  setFavoritos,
+  setFavoritos
 }: IListagemFavoritosProps) {
   return (
     <div className="card mb-4">
