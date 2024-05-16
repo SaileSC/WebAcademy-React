@@ -8,6 +8,8 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Navbar from "./components/Navbar/Navbar";
 import { ReactQueryClienteProvider } from "./components/ReactQueryClient";
 import FavoritosProvider from "./state/FavoritosProvider";
+import CarrinhoProvider from "./state/CarrinhoProvider";
+import { Toast } from "./components/Toast/Toast";
 
 export default function RootLayout({
   children
@@ -19,9 +21,12 @@ export default function RootLayout({
       <body>
         <ReactQueryClienteProvider>
           <FavoritosProvider>
-            <Navbar />
-            {children}
-            <BootstrapClient />
+            <CarrinhoProvider>
+              <Navbar />
+              {children}
+              <BootstrapClient />
+              <Toast />
+            </CarrinhoProvider>
           </FavoritosProvider>
         </ReactQueryClienteProvider>
       </body>

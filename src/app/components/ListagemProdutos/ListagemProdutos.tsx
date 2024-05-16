@@ -2,11 +2,8 @@
 import React, { useContext } from "react";
 import CardProduto from "../CardProduto/CardProduto";
 import { useListaProdutos } from "@/app/hooks/useListaProdutos";
-interface ListaProdutosProps {
-  setNovoProduto: Function;
-}
 
-const ListagemProdutos = ({ setNovoProduto }: ListaProdutosProps) => {
+const ListagemProdutos = () => {
   const { produtos, isPending, isError } = useListaProdutos();
 
   if (isPending) return <h5>Carregando...</h5>;
@@ -17,11 +14,7 @@ const ListagemProdutos = ({ setNovoProduto }: ListaProdutosProps) => {
       <h5 className="mb-3">Produtos disponíveis:</h5>
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
         {produtos.map((produto) => (
-          <CardProduto
-            key={produto.id}
-            produto={produto}
-            setNovoProduto={setNovoProduto}
-          />
+          <CardProduto key={produto.id} produto={produto} />
         ))}
       </div>
     </>

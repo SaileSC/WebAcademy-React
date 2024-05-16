@@ -6,13 +6,13 @@ import Botao from "../Botoes/Botao";
 import { useState } from "react";
 import { useFavoriteContext } from "@/app/hooks/useFavoriteContext";
 import { useVerificaProdutoFavoritos } from "@/app/hooks/useverificaProdutoFavorito";
+import { useCarrinhoNovoProduto } from "@/app/hooks/useCarrinhoNovoProduto";
 
 interface CardProdutoProps {
   produto: Produto;
-  setNovoProduto: Function;
 }
 
-const CardProduto = ({ produto, setNovoProduto }: CardProdutoProps) => {
+const CardProduto = ({ produto }: CardProdutoProps) => {
   const router = useRouter();
 
   const verDetalheProduto = (pathdir: string) => {
@@ -35,6 +35,8 @@ const CardProduto = ({ produto, setNovoProduto }: CardProdutoProps) => {
       setFavoritado(true);
     }
   };
+
+  const addProduto = useCarrinhoNovoProduto();
 
   return (
     <div className="col">
@@ -59,7 +61,7 @@ const CardProduto = ({ produto, setNovoProduto }: CardProdutoProps) => {
             text="Adicionar no carrinho"
             width={100}
             btnClass="dark"
-            onclick={() => setNovoProduto(produto)}
+            onclick={() => addProduto(produto, 1)}
           />
 
           <Botao
