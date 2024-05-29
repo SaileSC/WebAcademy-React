@@ -19,20 +19,17 @@ const CardProduto = ({ produto }: CardProdutoProps) => {
     router.push(`/produto/${pathdir}`);
   };
   const contextFavoritos = useFavoriteContext();
-
-  const [favoritado, setFavoritado] = useState<boolean>(
-    useVerificaProdutoFavoritos(produto.id)
-  );
+  const favoritado = useVerificaProdutoFavoritos(produto.id);
 
   const favoritaItem = (produto: Produto) => {
     if (contextFavoritos.favoritos.includes(produto)) {
       contextFavoritos.setFavoritos((favoritos) =>
         favoritos.filter((item) => item.id !== produto.id)
       );
-      setFavoritado(false);
+      //setFavoritado(false);
     } else {
       contextFavoritos.setFavoritos((favoritos) => [...favoritos, produto]);
-      setFavoritado(true);
+      //setFavoritado(true);
     }
   };
 
