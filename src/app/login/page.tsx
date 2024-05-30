@@ -10,7 +10,7 @@ export default function Login() {
             <h2>Bem vindo à WA Loja!</h2>
           </div>
           <div className="col-12 col-md-8 d-flex justify-content-center align-items-center">
-           <FormLogin/>
+            <FormLogin />
           </div>
         </div>
       </div>

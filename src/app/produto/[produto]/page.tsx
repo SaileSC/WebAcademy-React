@@ -8,7 +8,7 @@ export default function PageProduto() {
     <main>
       <div className="container p-5">
         <div className="card mb-4">
-            <CardDetalhaProduto/>
+          <CardDetalhaProduto />
         </div>
       </div>
     </main>

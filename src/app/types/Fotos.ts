@@ -1,4 +1,4 @@
-export interface Fotos{
-    titulo:string,
-    src:string
+export interface Fotos {
+  titulo: string;
+  src: string;
 }
